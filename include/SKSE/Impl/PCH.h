@@ -49,7 +49,9 @@
 #include <utility>
 #include <variant>
 #include <vector>
-
+#ifndef __cpp_consteval
+#include <boost/assert/source_location.hpp>
+#endif
 static_assert(
 	std::is_integral_v<std::time_t> && sizeof(std::time_t) == sizeof(std::size_t),
 	"wrap std::time_t instead");
@@ -471,8 +473,11 @@ namespace SKSE
 				static_assert(false && sizeof...(Args));
 			}
 		}
-
-		[[noreturn]] inline void report_and_fail(std::string_view a_msg, std::source_location a_loc = std::source_location::current())
+#ifndef __cpp_consteval
+        [[noreturn]] inline void report_and_fail(std::string_view a_msg, boost::source_location a_loc = BOOST_CURRENT_LOCATION)
+#else
+        [[noreturn]] inline void report_and_fail(std::string_view a_msg, std::source_location a_loc = std::source_location::current())
+#endif
 		{
 			const auto body = [&]() {
 				constexpr std::array directories{

@@ -2,7 +2,34 @@
 
 #include "RE/B/BSTEvent.h"
 #include "RE/L/LogEvent.h"
-
+#ifndef __cpp_consteval
+#define SKSE_MAKE_SOURCE_LOGGER(a_func, a_type)                           \
+                                                                          \
+	template <class... Args>                                              \
+	struct [[maybe_unused]] a_func                                        \
+	{                                                                     \
+		a_func() = delete;                                                \
+                                                                          \
+		template <class T>                                                \
+		explicit a_func(                                                  \
+			T&& a_fmt,                                                    \
+			Args&&... a_args,                                             \
+			boost::source_location a_loc = BOOST_CURRENT_LOCATION) \
+		{                                                                 \
+			spdlog::log(                                                  \
+				spdlog::source_loc{                                       \
+					a_loc.file_name(),                                    \
+					static_cast<int>(a_loc.line()),                       \
+					a_loc.function_name() },                              \
+				spdlog::level::a_type,                                    \
+				std::forward<T>(a_fmt),                                   \
+				std::forward<Args>(a_args)...);                           \
+		}                                                                 \
+	};                                                                    \
+                                                                          \
+	template <class T, class... Args>                                     \
+	a_func(T&&, Args&&...) -> a_func<Args...>;
+#else
 #define SKSE_MAKE_SOURCE_LOGGER(a_func, a_type)                           \
                                                                           \
 	template <class... Args>                                              \
@@ -29,6 +56,7 @@
                                                                           \
 	template <class T, class... Args>                                     \
 	a_func(T&&, Args&&...) -> a_func<Args...>;
+#endif
 
 namespace SKSE::log
 {
