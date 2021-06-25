@@ -352,7 +352,7 @@ namespace RE
 			};
 
 			if (newEntries == oldEntries) {
-				std::uninitialized_default_construct_n(oldEntries + oldCap, newCap - oldCap);
+				//std::uninitialized_default_construct_n(oldEntries + oldCap, newCap - oldCap);
 				std::vector<value_type> todo;
 				todo.reserve(size());
 				for (size_type i = 0; i < oldCap; ++i) {
@@ -367,7 +367,7 @@ namespace RE
 					std::make_move_iterator(todo.end()));
 			} else {
 				// in with the new
-				std::uninitialized_default_construct_n(newEntries, newCap);
+				//std::uninitialized_default_construct_n(newEntries, newCap);
 				setCap(newCap);
 				set_entries(newEntries);
 
