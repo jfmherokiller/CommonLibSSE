@@ -1,4 +1,3 @@
-#include "SKSE/Impl/WinAPI.h"
 
 #define WIN32_LEAN_AND_MEAN
 
