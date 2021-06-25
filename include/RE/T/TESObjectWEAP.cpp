@@ -34,7 +34,7 @@ namespace RE
 
 	void TESObjectWEAP::GetNodeName(char* a_dstBuff) const
 	{
-		sprintf_s(a_dstBuff, WinAPI::Constants::MAX_PATH, "%s  (%08X)", "Weapon", formID);
+		sprintf_s(a_dstBuff, static_cast<std::uint32_t>(260), "%s  (%08X)", "Weapon", formID);
 	}
 
 	WEAPON_TYPE TESObjectWEAP::GetWeaponType() const

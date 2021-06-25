@@ -2,14 +2,6 @@
 
 namespace SKSE::WinAPI
 {
-	struct Constants {
-        inline static constexpr auto IMAGE_SCN_MEM_EXECUTE{ static_cast<std::uint32_t>(0x20000000) };
-        inline static constexpr auto IMAGE_SCN_MEM_WRITE{ static_cast<std::uint32_t>(0x80000000) };
-        inline static const auto     INVALID_HANDLE_VALUE{ reinterpret_cast<void*>(static_cast<std::intptr_t>(-1)) };
-        inline static constexpr auto MAX_PATH{ static_cast<std::uint32_t>(260) };
-        inline static constexpr auto MEM_RELEASE{ static_cast<std::uint32_t>(0x00008000) };
-        inline static constexpr auto PAGE_EXECUTE_READWRITE{ static_cast<std::uint32_t>(0x40) };
-	};
 
 
 	struct CRITICAL_SECTION
@@ -53,7 +45,7 @@ namespace SKSE::WinAPI
 		std::uint32_t nFileSizeLow;
 		std::uint32_t dwReserved0;
 		std::uint32_t dwReserved1;
-		char          cFileName[Constants::MAX_PATH];
+		char          cFileName[static_cast<std::uint32_t>(260)];
 		char          cAlternateFileName[14];
 	};
 	static_assert(sizeof(_WIN32_FIND_DATAA) == 0x140);

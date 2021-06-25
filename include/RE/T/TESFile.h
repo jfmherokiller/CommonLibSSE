@@ -71,8 +71,8 @@ namespace RE
 		TESBitArrayFile*                            formUserDataBitArray;             // 040
 		TESBitArrayFile*                            formVersionBitArray;              // 048
 		TESBitArrayFile*                            formIDBitArray;                   // 050
-		char                                        fileName[WinAPI::Constants::MAX_PATH];       // 058
-		char                                        path[WinAPI::Constants::MAX_PATH];           // 15C
+		char                                        fileName[static_cast<std::uint32_t>(260)];       // 058
+		char                                        path[static_cast<std::uint32_t>(260)];           // 15C
 		char*                                       buffer;                           // 260
 		std::uint32_t                               bufferAllocSize;                  // 268
 		std::uint32_t                               firstCellOffset;                  // 26C

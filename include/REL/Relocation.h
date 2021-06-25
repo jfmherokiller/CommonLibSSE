@@ -222,7 +222,7 @@ namespace REL
 			WinAPI::VirtualProtect(
 				reinterpret_cast<void*>(a_dst),
 				a_count,
-				(WinAPI::Constants::PAGE_EXECUTE_READWRITE),
+				(static_cast<std::uint32_t>(0x40)),
 				std::addressof(old));
 		if (success != 0) {
 			std::memcpy(reinterpret_cast<void*>(a_dst), a_src, a_count);
@@ -256,7 +256,7 @@ namespace REL
 			WinAPI::VirtualProtect(
 				reinterpret_cast<void*>(a_dst),
 				a_count,
-				(WinAPI::Constants::PAGE_EXECUTE_READWRITE),
+				(static_cast<std::uint32_t>(0x40)),
 				std::addressof(old));
 		if (success != 0) {
 			std::fill_n(reinterpret_cast<std::uint8_t*>(a_dst), a_count, a_value);
@@ -477,13 +477,13 @@ namespace REL
 		}
 
 		static constexpr std::array SEGMENTS{
-			std::make_pair(".text"sv, WinAPI::Constants::IMAGE_SCN_MEM_EXECUTE),
+			std::make_pair(".text"sv, static_cast<std::uint32_t>(0x20000000)),
 			std::make_pair(".idata"sv, static_cast<std::uint32_t>(0)),
 			std::make_pair(".rdata"sv, static_cast<std::uint32_t>(0)),
 			std::make_pair(".data"sv, static_cast<std::uint32_t>(0)),
 			std::make_pair(".pdata"sv, static_cast<std::uint32_t>(0)),
 			std::make_pair(".tls"sv, static_cast<std::uint32_t>(0)),
-			std::make_pair(".text"sv, WinAPI::Constants::IMAGE_SCN_MEM_WRITE),
+			std::make_pair(".text"sv, static_cast<std::uint32_t>(0x80000000)),
 			std::make_pair(".gfids"sv, static_cast<std::uint32_t>(0))
 		};
 

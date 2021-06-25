@@ -82,7 +82,7 @@ namespace SKSE
 
 			set_trampoline(mem, a_size,
 				[](void* a_mem, std::size_t) {
-					WinAPI::VirtualFree(a_mem, 0, WinAPI::Constants::MEM_RELEASE);
+					WinAPI::VirtualFree(a_mem, 0, static_cast<std::uint32_t>(0x00008000));
 				});
 		}
 

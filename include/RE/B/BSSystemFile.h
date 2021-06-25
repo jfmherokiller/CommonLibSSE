@@ -23,7 +23,7 @@ namespace RE
 			// members
 			std::uint32_t flags{ 1 };                            // 00
 			std::uint32_t pad04{ 0 };                            // 04
-			void*         file{ WinAPI::Constants::INVALID_HANDLE_VALUE };  // 08
+			void*         file{ reinterpret_cast<void*>(static_cast<std::intptr_t>(-1)) };  // 08
 		};
 		static_assert(sizeof(BSSystemFile) == 0x10);
 	}

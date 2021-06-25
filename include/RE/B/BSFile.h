@@ -39,7 +39,7 @@ namespace RE
 		std::int32_t  auxTrueFilePos;              // 058
 		std::uint32_t auxBufferMinIndex;           // 05C
 		std::uint32_t auxBufferMaxIndex;           // 060
-		char          fileName[WinAPI::Constants::MAX_PATH];  // 064
+		char          fileName[static_cast<std::uint32_t>(260)];  // 064
 		std::uint32_t result;                      // 168
 		std::uint32_t ioSize;                      // 16C
 		std::uint32_t trueFilePos;                 // 170
