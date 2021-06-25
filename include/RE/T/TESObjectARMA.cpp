@@ -32,15 +32,7 @@ namespace RE
 		if (HasArmorRace(a_sourceRace, race)) {
 			return true;
 		}
-
-		for (auto& targetRace : additionalRaces) {
-			// Source race is a found race, or inherits one of the found races
-			if (HasArmorRace(a_sourceRace, targetRace)) {
-				return true;
-			}
-		}
-
-		return false;
+        return std::ranges::any_of(additionalRaces,[=](auto& trace){ return HasArmorRace(a_sourceRace,trace); });
 	}
 
 	void TESObjectARMA::GetNodeName(char* a_dstBuff, const TESObjectREFR* a_refr, const TESObjectARMO* a_armor, float a_weightOverride)
