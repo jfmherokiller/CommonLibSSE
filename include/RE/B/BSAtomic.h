@@ -68,7 +68,7 @@ namespace RE
 	class BSReadWriteLock
 	{
 	public:
-		enum
+		enum: unsigned int
 		{
 			kLockWrite = 0x80000000,
 			kLockCountMask = 0xFFFFFFF
