@@ -18,7 +18,7 @@ namespace RE
 		virtual const NiRTTI*    GetRTTI() const override;       // 02
 		virtual bool             Update(float a_arg1) override;  // 28
 		virtual NiAVObject*      Get3D() const override;         // 29
-		virtual TEMP_EFFECT_TYPE GetType() const;                // 2C - { return kDebris; }
+		virtual TEMP_EFFECT_TYPE GetType() const override;                // 2C - { return kDebris; }
 
 		// members;
 		NiPointer<NiAVObject> debris3D;        // 030

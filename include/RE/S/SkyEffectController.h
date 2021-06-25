@@ -12,7 +12,7 @@ namespace RE
 		virtual ~SkyEffectController();  // 00
 
 		// override (ReferenceEffectController)
-		virtual void             RemoveHitEffect(ReferenceEffect* a_refEffect);  // 0A - { return; }
+		virtual void             RemoveHitEffect(ReferenceEffect* a_refEffect) override;  // 0A - { return; }
 		virtual TESObjectREFR*   GetTargetReference() override;                  // 0B - { return g_thePlayer; }
 		virtual BGSArtObject*    GetHitEffectArt() override;                     // 0C - { return GetSkyReferenceEffectArt(); }
 		virtual TESEffectShader* GetHitEffectShader() override;                  // 0D - { return 0; }

@@ -23,7 +23,7 @@ namespace RE
 
 		// override (hkbGenerator)
 		virtual hkClass* GetClassType() const override;                                                            // 01
-		virtual void     CalcContentStatistics(hkStatisticsCollector* a_collector, const hkClass* a_class) const;  // 02
+		virtual void     CalcContentStatistics(hkStatisticsCollector* a_collector, const hkClass* a_class) const override;  // 02
 		virtual void     Unk_04(void) override;                                                                    // 04
 		virtual void     Unk_05(void) override;                                                                    // 05
 		virtual void     Unk_06(void) override;                                                                    // 06

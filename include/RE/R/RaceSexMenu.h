@@ -27,10 +27,10 @@ namespace RE
 		virtual void               AdvanceMovie(float a_interval, std::uint32_t a_currentTime) override;  // 05
 
 		// override (MenuEventHandler)
-		virtual bool CanProcess(InputEvent* a_event) = 0;          // 01
-		virtual bool ProcessThumbstick(ThumbstickEvent* a_event);  // 03
-		virtual bool ProcessMouseMove(MouseMoveEvent* a_event);    // 04
-		virtual bool ProcessButton(ButtonEvent* a_event);          // 05
+		virtual bool CanProcess(InputEvent* a_event) override = 0;          // 01
+		virtual bool ProcessThumbstick(ThumbstickEvent* a_event) override;  // 03
+		virtual bool ProcessMouseMove(MouseMoveEvent* a_event) override;    // 04
+		virtual bool ProcessButton(ButtonEvent* a_event) override;          // 05
 
 		// members
 		BSTArray<void*>                      unk040[7];  // 040
