@@ -35,7 +35,7 @@ namespace RE
 		// override (BSTEventSink<BSAnimationGraphEvent>)
 		BSEventNotifyControl ProcessEvent(const BSAnimationGraphEvent* a_event, BSTEventSource<BSAnimationGraphEvent>* a_eventSource) override;  // 01
 
-		[[nodiscard]] TESObjectREFR* GetTargetReference();  // returns null if opened from inventory
+		[[nodiscard]] static TESObjectREFR* GetTargetReference();  // returns null if opened from inventory
 
 		// members
 		BSTArray<ImageData> unk50;      // 50

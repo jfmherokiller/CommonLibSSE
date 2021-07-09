@@ -2,7 +2,7 @@
 
 namespace RE
 {
-	std::tm TESClimate::Timing::Interval::ConvertInterval(std::uint8_t a_time) const
+	std::tm TESClimate::Timing::Interval::ConvertInterval(std::uint8_t a_time)
 	{
 		std::tm result;
 		result.tm_sec = 0;

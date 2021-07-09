@@ -51,7 +51,7 @@ namespace RE
 			struct Interval
 			{
 			public:
-				std::tm ConvertInterval(std::uint8_t a_time) const;
+				static std::tm ConvertInterval(std::uint8_t a_time) ;
 				std::tm GetBeginTime() const;
 				std::tm GetEndTime() const;
 
