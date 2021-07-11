@@ -40,8 +40,8 @@ namespace RE
 		void           DeallocateInternalArrays() override;                                                                                                                                                 // 0E
 		void           SetPositionAndLinearCast(const hkVector4& a_position, const hkpLinearCastInput& a_input, hkpCdPointCollector& a_castCollector, hkpCdPointCollector* a_startCollector) override;      // 0F
 		void           SetTransformAndLinearCast(const hkTransform& a_transform, const hkpLinearCastInput& a_input, hkpCdPointCollector& a_castCollector, hkpCdPointCollector* a_startCollector) override;  // 10
-		void           GetClosestPoints(hkpCdPointCollector& a_collector, const hkpCollisionInput* a_input = 0) override;                                                                                   // 11
-		void           GetPenetrations(hkpCdBodyPairCollector& a_collector, const hkpCollisionInput* a_input = 0) override;                                                                                 // 12
+		void           GetClosestPoints(hkpCdPointCollector& a_collector, const hkpCollisionInput* a_input = nullptr) override;                                                                                   // 11
+		void           GetPenetrations(hkpCdBodyPairCollector& a_collector, const hkpCollisionInput* a_input = nullptr) override;                                                                                 // 12
 
 		// members
 		hkArray<CollisionDetail> collisionDetails;  // 1A0

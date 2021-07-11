@@ -41,7 +41,7 @@ namespace RE
 		BSResource::ErrorCode               lastError;  // 34
 
 	private:
-		BSResourceNiBinaryStream* ctor(const char* a_name, bool a_writeable = false, BSResource::Location* a_optionalStart = 0);
+		BSResourceNiBinaryStream* ctor(const char* a_name, bool a_writeable = false, BSResource::Location* a_optionalStart = nullptr);
 		void                      dtor();
 	};
 	static_assert(sizeof(BSResourceNiBinaryStream) == 0x38);

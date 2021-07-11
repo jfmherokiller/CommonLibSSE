@@ -27,8 +27,8 @@ namespace RE
 		// add
 		virtual void SetPositionAndLinearCast(const hkVector4& a_position, const hkpLinearCastInput& a_input, hkpCdPointCollector& a_castCollector, hkpCdPointCollector* a_startCollector) = 0;      // 0F
 		virtual void SetTransformAndLinearCast(const hkTransform& a_transform, const hkpLinearCastInput& a_input, hkpCdPointCollector& a_castCollector, hkpCdPointCollector* a_startCollector) = 0;  // 10
-		virtual void GetClosestPoints(hkpCdPointCollector& a_collector, const hkpCollisionInput* a_input = 0) = 0;                                                                                   // 11
-		virtual void GetPenetrations(hkpCdBodyPairCollector& a_collector, const hkpCollisionInput* a_input = 0) = 0;                                                                                 // 12
+		virtual void GetClosestPoints(hkpCdPointCollector& a_collector, const hkpCollisionInput* a_input = nullptr) = 0;                                                                                   // 11
+		virtual void GetPenetrations(hkpCdBodyPairCollector& a_collector, const hkpCollisionInput* a_input = nullptr) = 0;                                                                                 // 12
 
 		// members
 		hkMotionState motionState;  // 0F0
