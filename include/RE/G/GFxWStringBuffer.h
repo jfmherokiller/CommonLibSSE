@@ -84,7 +84,7 @@ namespace RE
 		void resize(size_type a_count);
 
 	protected:
-		wchar_t* alloc(size_type a_count);
+		static wchar_t* alloc(size_type a_count);
 		void     release();
 
 		// members

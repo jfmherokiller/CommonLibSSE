@@ -52,7 +52,7 @@ namespace RE
 		const TESFile*               LookupLoadedLightModByIndex(std::uint16_t a_index);
 		std::optional<std::uint16_t> GetLoadedLightModIndex(std::string_view a_modName);
 
-		bool IsGeneratedID(FormID a_formID);
+		static bool IsGeneratedID(FormID a_formID);
 
 		BSTArray<TESForm*>& GetFormArray(FormType a_formType);
 		template <class T>

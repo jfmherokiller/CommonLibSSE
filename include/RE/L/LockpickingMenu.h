@@ -36,7 +36,7 @@ namespace RE
 		// override (BSTEventSink<MenuOpenCloseEvent>)
 		BSEventNotifyControl ProcessEvent(const MenuOpenCloseEvent* a_event, BSTEventSource<MenuOpenCloseEvent>* a_eventSource) override;  // 01
 
-		[[nodiscard]] TESObjectREFR* GetTargetReference();
+		[[nodiscard]] static TESObjectREFR* GetTargetReference();
 
 		// members
 		void*         unk048;  // 048

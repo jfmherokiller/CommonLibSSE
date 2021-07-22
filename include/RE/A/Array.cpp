@@ -144,7 +144,7 @@ namespace RE
 			return _size;
 		}
 
-		[[nodiscard]] auto Array::max_size() const noexcept
+		[[nodiscard]] auto Array::max_size() noexcept
 			-> size_type
 		{
 			return MAX_SIZE;

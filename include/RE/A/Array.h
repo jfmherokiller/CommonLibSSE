@@ -58,7 +58,7 @@ namespace RE
 
 			[[nodiscard]] size_type size() const noexcept;
 
-			[[nodiscard]] size_type max_size() const noexcept;
+			[[nodiscard]] static size_type max_size() noexcept;
 
 			[[nodiscard]] TypeInfo&       type_info();
 			[[nodiscard]] const TypeInfo& type_info() const;

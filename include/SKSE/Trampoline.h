@@ -179,7 +179,7 @@ namespace SKSE
 		}
 
 	private:
-		[[nodiscard]] void* do_create(std::size_t a_size, std::uintptr_t a_address);
+		[[nodiscard]] static void* do_create(std::size_t a_size, std::uintptr_t a_address);
 
 		[[nodiscard]] void* do_allocate(std::size_t a_size)
 		{
@@ -327,7 +327,7 @@ namespace SKSE
 
 		void log_stats() const;
 
-		bool in_range(std::ptrdiff_t a_disp) const
+		static bool in_range(std::ptrdiff_t a_disp)
 		{
 			constexpr auto min = std::numeric_limits<std::int32_t>::min();
 			constexpr auto max = std::numeric_limits<std::int32_t>::max();
