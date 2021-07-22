@@ -49,6 +49,7 @@
 #include <utility>
 #include <variant>
 #include <vector>
+#define offsetof(x,d) __builtin_offsetof(x,d)
 #ifndef __cpp_consteval
 #include <boost/assert/source_location.hpp>
 #endif
